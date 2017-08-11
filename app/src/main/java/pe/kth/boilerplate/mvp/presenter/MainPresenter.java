@@ -16,6 +16,10 @@ public class MainPresenter implements Presenter<MainView>{
     // 컨텍스트는 정말 필요할때만 사용하기!!
     private Context ctx;
 
+    public MainPresenter(Context context) {
+        ((MyApp) context).getAppComponent().inject(this);
+    }
+
     @Override
     public void attachView(MainView view) {
         this.mainView = view;

@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import java.util.logging.Logger;
+import pe.kth.boilerplate.mvp.dagger2.component.AppComponent;
+import pe.kth.boilerplate.mvp.dagger2.component.DaggerAppComponent;
+import pe.kth.boilerplate.mvp.dagger2.module.AppModule;
 
 /**
  * Created by dev on 2017-08-10.
@@ -13,6 +15,8 @@ import java.util.logging.Logger;
 public class MyApp extends Application{
     private static volatile MyApp instance = null;
     private static volatile Activity currentActivity = null;
+
+    private AppComponent appComponent;
 
     public static MyApp get(Context context){
         return (MyApp) context.getApplicationContext();
@@ -37,5 +41,17 @@ public class MyApp extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+
+        appComponent = initDagger2(this);
+    }
+
+    public AppComponent getAppComponent() {
+        return appComponent;
+    }
+
+    public AppComponent initDagger2(MyApp app) {
+        return DaggerAppComponent.builder()
+                            .appModule( new AppModule(app) )
+                            .build();
     }
 }

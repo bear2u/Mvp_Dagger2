@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MvpBoilerplate.iml" filepath="$PROJECT_DIR$/MvpBoilerplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mvp&amp;Dagger.iml" filepath="$PROJECT_DIR$/Mvp&amp;Dagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
