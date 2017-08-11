@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MvpBoilerplate</string>
+    <string name="not_connect_internet">인터넷 연결이 현재 안좋습니다.\n잠시 후 이용 부탁드립니다.</string>
+</resources>
