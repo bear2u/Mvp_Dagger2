@@ -1,7 +1,6 @@
-package pe.kth.boilerplate.mvp.view.base;
+package pe.kth.boilerplate.mvp.main.view.base;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;

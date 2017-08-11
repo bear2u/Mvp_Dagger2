@@ -1,24 +1,17 @@
 package pe.kth.boilerplate.mvp.dagger2.module;
 
-import android.app.Application;
 import android.content.Context;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import pe.kth.boilerplate.mvp.MyApp;
 
 @Module
 public class AppModule {
-    private Application application;
-
-    public AppModule(Application application) {
-        this.application = application;
-    }
-
     @Provides
-    @Singleton
-    public Context provideContext(){
-        return this.application;
+    public Context provideContext(MyApp app){
+        return app.getApplicationContext();
     }
+
+    // Add application level bindings here, e.g.: RestClientApi, Repository, etc.
 }

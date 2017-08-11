@@ -1,6 +1,6 @@
-package pe.kth.boilerplate.mvp.view;
+package pe.kth.boilerplate.mvp.main.view;
 
-import pe.kth.boilerplate.mvp.view.base.MvpView;
+import pe.kth.boilerplate.mvp.main.view.base.MvpView;
 
 /**
  * Created by dev on 2017-08-10.

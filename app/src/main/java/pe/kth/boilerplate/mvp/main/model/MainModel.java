@@ -1,8 +1,5 @@
-package pe.kth.boilerplate.mvp.model;
+package pe.kth.boilerplate.mvp.main.model;
 
-/**
- * Created by dev on 2017-08-10.
- */
 
 public class MainModel {
     private static MainModel instance;

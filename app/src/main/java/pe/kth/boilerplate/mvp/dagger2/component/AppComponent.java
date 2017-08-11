@@ -1,20 +1,26 @@
 package pe.kth.boilerplate.mvp.dagger2.component;
 
-import javax.inject.Singleton;
-
+import dagger.BindsInstance;
 import dagger.Component;
+import dagger.android.support.AndroidSupportInjectionModule;
+import pe.kth.boilerplate.mvp.MyApp;
 import pe.kth.boilerplate.mvp.dagger2.module.AppModule;
-import pe.kth.boilerplate.mvp.dagger2.module.PresenterModule;
-import pe.kth.boilerplate.mvp.presenter.MainPresenter;
-import pe.kth.boilerplate.mvp.view.MainActivity;
+import pe.kth.boilerplate.mvp.dagger2.module.BuildersModule;
+import pe.kth.boilerplate.mvp.main.dagger2.MainModule;
 
-/**
- * Created by dev on 2017-08-11.
- */
-
-@Singleton
-@Component( modules = {AppModule.class , PresenterModule.class})
+@Component( modules = {
+        /* Use AndroidInjectionModule.class if you're not using support library */
+        AndroidSupportInjectionModule.class,
+        AppModule.class ,
+        BuildersModule.class ,
+        MainModule.class
+})
 public interface AppComponent {
-    void inject(MainActivity target);
-    void inject(MainPresenter target);
+    @Component.Builder
+    interface Builder {
+        @BindsInstance Builder application(MyApp app);
+        AppComponent build();
+    }
+
+    void inject(MyApp app);
 }

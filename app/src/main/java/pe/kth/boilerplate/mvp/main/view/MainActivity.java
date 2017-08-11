@@ -1,8 +1,7 @@
-package pe.kth.boilerplate.mvp.view;
+package pe.kth.boilerplate.mvp.main.view;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
 import javax.inject.Inject;
@@ -10,10 +9,10 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import pe.kth.boilerplate.mvp.MyApp;
+import dagger.android.AndroidInjection;
 import pe.kth.boilerplate.mvp.R;
-import pe.kth.boilerplate.mvp.presenter.MainPresenter;
-import pe.kth.boilerplate.mvp.view.base.BaseActivity;
+import pe.kth.boilerplate.mvp.main.presenter.MainPresenterImpl;
+import pe.kth.boilerplate.mvp.main.view.base.BaseActivity;
 
 public class MainActivity extends BaseActivity implements MainView {
 
@@ -23,18 +22,15 @@ public class MainActivity extends BaseActivity implements MainView {
 
     //Injection
     @Inject
-    MainPresenter mainPresenter = null;
+    MainPresenterImpl mainPresenter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ((MyApp) getApplication()).getAppComponent().inject(this);
-
         ButterKnife.bind(this);
-
-        mainPresenter.attachView(this);
 
     }
 

@@ -4,19 +4,23 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import pe.kth.boilerplate.mvp.dagger2.component.AppComponent;
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 import pe.kth.boilerplate.mvp.dagger2.component.DaggerAppComponent;
-import pe.kth.boilerplate.mvp.dagger2.module.AppModule;
 
 /**
  * Created by dev on 2017-08-10.
  */
 
-public class MyApp extends Application{
+public class MyApp extends Application implements HasActivityInjector{
+    @Inject
+    DispatchingAndroidInjector<Activity> androidInjector;
+
     private static volatile MyApp instance = null;
     private static volatile Activity currentActivity = null;
-
-    private AppComponent appComponent;
 
     public static MyApp get(Context context){
         return (MyApp) context.getApplicationContext();
@@ -42,16 +46,19 @@ public class MyApp extends Application{
     public void onCreate() {
         super.onCreate();
 
-        appComponent = initDagger2(this);
+        initDagger2();
     }
 
-    public AppComponent getAppComponent() {
-        return appComponent;
+    private void initDagger2(){
+        DaggerAppComponent
+                .builder()
+                .application(this)
+                .build()
+                .inject(this);
     }
 
-    public AppComponent initDagger2(MyApp app) {
-        return DaggerAppComponent.builder()
-                            .appModule( new AppModule(app) )
-                            .build();
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return androidInjector;
     }
 }
