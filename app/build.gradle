@@ -43,23 +43,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
-//
-//    testCompile 'junit:junit:4.12'
-
     compile 'com.jakewharton:butterknife:8.8.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
-
-//    // Dagger core dependencies
-//    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2_ver"
-//    compile "com.google.dagger:dagger:$dagger2_ver"
-//// Dagger Android dependencies
-//    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2_ver"
-//    compile "com.google.dagger:dagger-android:$dagger2_ver"
-//// Use this instead if you're using support library
-//    compile "com.google.dagger:dagger-android-support:$dagger2_ver"
 
     // Retrofit
 //    compile "com.squareup.retrofit2:retrofit:2.1.0"
@@ -68,8 +53,6 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
     compile "com.google.dagger:dagger:$daggerVersion"
-// Uncomment if you're not using support library and remove 'dagger-android-support' below
-//    compile "com.google.dagger:dagger-android:$daggerVersion"
     compile "com.google.dagger:dagger-android-support:$daggerVersion"
 
 }

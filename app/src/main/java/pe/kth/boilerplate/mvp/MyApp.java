@@ -2,7 +2,6 @@ package pe.kth.boilerplate.mvp;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 
 import javax.inject.Inject;
 
@@ -18,29 +17,6 @@ import pe.kth.boilerplate.mvp.dagger2.component.DaggerAppComponent;
 public class MyApp extends Application implements HasActivityInjector{
     @Inject
     DispatchingAndroidInjector<Activity> androidInjector;
-
-    private static volatile MyApp instance = null;
-    private static volatile Activity currentActivity = null;
-
-    public static MyApp get(Context context){
-        return (MyApp) context.getApplicationContext();
-    }
-
-    public static Activity getCurrentActivity() {
-        return currentActivity;
-    }
-
-    public static void setCurrentActivity(Activity currentActivity) {
-        MyApp.currentActivity = currentActivity;
-    }
-    @Override
-    public Context getApplicationContext() {
-        return super.getApplicationContext();
-    }
-
-    public static MyApp getInstance() {
-        return instance;
-    }
 
     @Override
     public void onCreate() {
