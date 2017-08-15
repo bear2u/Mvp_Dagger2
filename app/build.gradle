@@ -40,11 +40,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    compile 'com.jakewharton:butterknife:8.8.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 
     // Retrofit
 //    compile "com.squareup.retrofit2:retrofit:2.1.0"
@@ -55,4 +50,8 @@ dependencies {
     compile "com.google.dagger:dagger:$daggerVersion"
     compile "com.google.dagger:dagger-android-support:$daggerVersion"
 
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:8.8.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 }

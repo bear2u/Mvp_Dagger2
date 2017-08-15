@@ -1,9 +1,9 @@
 package pe.kth.boilerplate.mvp.main.presenter;
 
-public interface MainPresenter {
+import pe.kth.boilerplate.mvp.base.Presenter;
+import pe.kth.boilerplate.mvp.main.view.MainView;
 
-    void detachView();
-
-    void notConnectNetworking();
+public interface MainPresenter extends Presenter{
+    void addNumberProc();
 
 }

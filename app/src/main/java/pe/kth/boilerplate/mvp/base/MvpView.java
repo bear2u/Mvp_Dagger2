@@ -1,4 +1,4 @@
-package pe.kth.boilerplate.mvp.main.view.base;
+package pe.kth.boilerplate.mvp.base;
 
 import android.content.Context;
 

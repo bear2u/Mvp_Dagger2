@@ -28,6 +28,7 @@ public class MainPresenterImpl implements MainPresenter{
         mainView.notConnectNetworking();
     }
 
+    @Override
     public void addNumberProc(){
         int number = MainModel.getInstance().addNum();
         mainView.addNumberDone(number);

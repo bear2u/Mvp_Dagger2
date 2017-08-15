@@ -1,4 +1,4 @@
-package pe.kth.boilerplate.mvp.main.view.base;
+package pe.kth.boilerplate.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,6 +1,7 @@
 package pe.kth.boilerplate.mvp.main.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -12,7 +13,8 @@ import butterknife.OnClick;
 import dagger.android.AndroidInjection;
 import pe.kth.boilerplate.mvp.R;
 import pe.kth.boilerplate.mvp.main.presenter.MainPresenterImpl;
-import pe.kth.boilerplate.mvp.main.view.base.BaseActivity;
+import pe.kth.boilerplate.mvp.base.BaseActivity;
+import pe.kth.boilerplate.mvp.sub.view.SubActivity;
 
 public class MainActivity extends BaseActivity implements MainView {
 
@@ -31,12 +33,17 @@ public class MainActivity extends BaseActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.btnAddNumber)
     public void addNumber(){
         mainPresenter.addNumberProc();
+    }
+
+    @OnClick(R.id.btnMoveSub)
+    public void moveSub(){
+        Intent intent = new Intent(this , SubActivity.class);
+        startActivity(intent);
     }
 
     @Override
